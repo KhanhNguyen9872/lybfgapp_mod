@@ -13,8 +13,9 @@
 4.  Install **APK**.
 5.  Grant root for the app named "**Frame Gen**".
 6.  Restart the phone.
-7.  Open the app, click to **License**, click **Verify and Save**.
-8.  When it show "**License has been set.**", then close the app and reopen again.
+7.  Open the app, click to "**I agree**" and reopen the app again.
+8.  Click to **License**, click **Verify and Save**.
+9.  When it show "**License has been set.**", then close the app and reopen again.
 
 ## Disclaimer
 This is an unofficial project modded from [https://lybxlpsv.com/framegen](https://lybxlpsv.com/framegen).
