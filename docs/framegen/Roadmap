@@ -1,0 +1,59 @@
+## Our roadmap as of now :
+
+The version number represents the targeted objectives to be accomplished in the final iteration of the release.
+
+We may occasionally incorporate new features and improvements into stable branches if they're feasible and beneficial to the existing codebase. The decision depends on factors like complexity and relevance to the stable version.
+
+## 📍 0.0
+
+* Platform stability for initial release.
+
+## 📍 0.1
+
+* Vulkan Support
+
+## 📍 0.2
+
+* Optimize VK rendering path.
+
+## 📍 0.3
+
+* Optimize GL rendering path.
+
+## 📍 0.4
+
+* More optimisation and bug fixes.
+* UX Improvements
+
+## 📍 0.5
+
+* Frame Pacing tuning
+
+## 🚧 0.6
+
+* Backend rework, frame pacing, and model improvements to prepare for our upcoming rootless version.
+* Perhaps finally usable on Mali? We'll see.✅
+* Workaround for certain emulators.✅
+* Localization and UX improvements.🚧
+* Proper LTPO support.🚧
+
+## 🚧 0.7
+
+* Rootless (A11+, Shizuku)
+* (rootless) Upscaling (SGSR, FXAA, Integer Scaling)
+
+## Forward Looking
+
+* Implement more sophisticated UI detection model.
+* Improve frame generation output and find the balance between performance, quality and power consumption.
+
+## Possibly in the future?
+
+* Termux X11 Support
+* Upscaling? Post-Processing?
+* No root mode (A11+)
+
+Keep in mind that these list are non-exhaustive, there are maybe even more caveats and to-dos that we haven't discovered yet along with the **unknown possibility** of such thing to be implemented. We will still try to mitigate any issues through potential workarounds where feasible.
+
+This roadmap may change at any moment.
+
