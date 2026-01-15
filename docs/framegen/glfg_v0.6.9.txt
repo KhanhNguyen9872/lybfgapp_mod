@@ -1,0 +1,227 @@
+version;1
+app_latestver;2
+mod_latestver;0.5.100
+
+var;method=Mode;select;0=GPU (Compatibility, Mali);3=GPU (Experimental);10=(dev) GPU Heavy (Compatibility);13=(dev) GPU Heavy;1=GPU+HW (A640+);2=(exp) (A7xx+, worse);4=(dev) GPU+HW NEW
+var;fgcount=FG Count;select;-1=Auto;1=1 Frame;2=2 Frame;3=3 Frame;4=4 Frame
+var;skipfg=FPS Threshold;select;-1=Disabled;100=10fps;66=15fps;50=20fps;40=25fps
+var;fpslimit=FPS Limit;slider;min=24;max=144
+var;debugui=Overlay;select;0=Disabled;1=Show FPS;3=Show FPS and API;4=(dev) profiling;5=(dev) pacing;6=(dev) gpu info;7=(dev) gpu info 2;10=(dev) gpu info 10
+
+var;a640qs=Quality Mode (Granular);select;100=Very High;80=High;60=Medium;40=Low;30=Very Low
+var;a640q=Quality Mode;select;10=Very High;1=High;2=Medium;3=Low;4=Very Low
+
+var;a640b=Generation Mode;select;8=Performance;1=Low (Clarity);5=Low (Smoothness);6=Medium;9=(dev) Quality;7=High;2=(exp) (removed) Prefer Performance (Worse);3=(exp) Auto;4=(exp) Auto (Lite);0=(dev) np;10=(dev) ui mask only;11=(dev) debug shd
+
+var;sfquality=Surface Quality;select;5=(dev) 4 bit;4=(dev) 5 bit;3=8 bit;2=10 bit;1=16 bit;
+
+var;vk_adrenotools=Emu Driver Switcher Workaround;select;0=No;1=Yes;
+
+textb;vk_presentmode;If you want to avoid frame skipping issue entirely at cost of potentially higher latency, you can use FIFO or Adaptive. Use Mailbox if you need to exceed screen RR or if Vsync is not working correctly on your ROM.\nNote: Auto Preset and Frame Pacing does not work with FIFO.
+var;vk_presentmode=Present Mode;select;-1=Application Controlled;200=Adaptive;1=Mailbox;2=FIFO (Hard Vsync);401=FIFO with 2 Interval;402=FIFO with 2 Interval (Relaxed);100=(dev) test
+
+var;vk_sync=VK Synchronization;select;0=None;1=Queue;3=Device;4=Auto (Queue);5=Auto (Device)
+
+textb;framepace;If default frame pacing does not work well, try Auto v3.
+var;framepace=Frame Pacing;select;-1=Auto;-1000=Auto v3;-300=(dev) VRR/G-Sync (Prefer Smoothness);-301=(dev) VRR/G-Sync (Prefer Low Latency);-302=(dev) VRR/G-Sync debug;0=0;1=1;2=2;3=3;4=4;5=5;6=6;7=7;8=8;9=9;10=10;12=12;16=16;-150=(exp) Auto v3 (0);-149=(exp) Auto v3 (1);-148=(exp) Auto v3 (2);-147=(exp) Auto v3 (3);-146=(exp) Auto v3 (4);-145=(exp) Auto v3 (5);-144=(exp) Auto v3 (7);-143=(exp) Auto v3 (8)
+
+textb;vk_flight;How many frames can be pre-rendered by the CPU to keep the gpu "well fed". Will increase latency.
+var;vk_flight=Max frames in-flight;select;0=0;1=1;2=2;3=3;4=4;5=5;6=6;
+
+var;spoofdreno=Spoof GPU;select;830=A830;1=A750;2=A740;3=A730;660=A660;650=A650;640=A640;630=A630;618=A618
+
+var;ctam=Multi Display Support;select;0=Disable;1=All Display;2=Disable FG on Smaller Screen;3=Smaller Screen force 30->60
+var;vk_wa7=Presentation Workaround;select;0=Disable;1=Enable
+var;g57wa=Mali Corruption Workaround;select;0=Auto;1=Enabled;2=Disabled;
+
+preset;preset_60_120=60fps -> 120fps;fgcount=1;fpslimit=60
+preset;preset_40_120=40fps -> 120fps;fgcount=2;fpslimit=40
+preset;preset_30_120=30fps -> 120fps;fgcount=3;fpslimit=30
+preset;preset_30_60=30fps -> 60fps;fgcount=1;fpslimit=30
+preset;preset_30_90=30fps -> 90fps;fgcount=2;fpslimit=30
+preset;preset_45_90=45fps -> 90fps;fgcount=1;fpslimit=45
+preset;preset_40_80=40fps -> 80fps;fgcount=1;fpslimit=40
+preset;preset_48_144=48fps -> 144fps;fgcount=2;fpslimit=48
+preset;preset_72_144=72fps -> 144fps;fgcount=1;fpslimit=72
+preset;preset_55_165=55fps -> 165fps;fgcount=3;fpslimit=55
+preset;preset_48_96=48fps -> 96fps;fgcount=1;fpslimit=48
+preset;preset_auto_60=Auto 60fps cap;fgcount=-1;fpslimit=60
+preset;preset_auto_40=Auto 40fps cap;fgcount=-1;fpslimit=40
+preset;preset_auto_uncapped_full=Auto Uncapped;fgcount=-1
+preset;preset_auto_uncapped_hfr=Auto Uncapped (Disable at high framerate);fgcount=-2
+preset;preset_auto_uncapped_video=Auto Uncapped (For Video Player);fgcount=-3
+preset;preset_2x_uncapped=+1 Uncapped;fgcount=1
+preset;preset_3x_uncapped=+2 Uncapped;fgcount=2
+preset;preset_4x_uncapped=+3 Uncapped;fgcount=3
+preset;preset_5x_uncapped=+4 Uncapped;fgcount=4
+
+//low latency
+//preset;preset_60_120_ll=60 -> 120 (Low Latency);fgcount=1;fpslimit=60;fgll=1
+//preset;preset_72_144_ll=72 -> 144 (Low Latency);fgcount=1;fpslimit=72;fgll=1
+//preset;preset_2x_uncapped_ll=+1 Uncapped (Low Latency);fgcount=1;fgll=1
+
+preset;preset_none=None;fgcount=0
+
+workaround;kgsl_gpu_boost=Enable GPU Daemon;kgsl_gpu_boost=1;
+
+text;workaround_present;Enable these below if you're experiencing framerate related issues.
+textb;workaround_surfacepresent;Warning: 'Force Surface Framerate' may cause crashes on certain apps/games.
+
+workaround;workaround_present=Ignore Presentation Time;glhookpresent=1;
+textb;workaround_surfacepresent_ue4;for Unreal Engine.
+workaround;workaround_surfacepresent_ue4=Ignore Refresh Rate Lock (UE);surfacehook_ue4=1;
+minver_var;workaround_surfacepresent_ue4;0.6.1444
+
+//experi_var;workaround_surfacepresent_ue4
+enabled_var;workaround_surfacepresent_ue4
+
+workaround;workaround_surfacepresent=Force Surface Framerate;surfacehook=1;
+
+//workaround;workaround_delayhook=Delayed Hook Workaround;delayhook=5;
+//workaround;workaround_context=Force Context Workaround;forceegl=1;
+
+text;fiwa;\nEnable these below if you're experiencing frame ordering or corruption related issues.
+workaround;fiwa=GL Queue Workaround;fiwa=1;
+enabled_var;fiwa
+workaround;vfiwa=VK Queue Workaround;vfiwa=1;
+enabled_var;vfiwa
+experi_var;vfiwa
+workaround;vk_wa6=VK Legacy Renderer;vk_wa6=1;
+enabled_var;vk_wa6
+minver_var;vk_wa6;0.6.1510
+experi_var;vk_wa6
+workaround;vk_nasync=VK Force Sync;vk_nasync=1;
+enabled_var;vk_nasync
+minver_var;vk_nasync;0.6.1556
+dev_var;vk_nasync
+
+text;vk_wa1;Old Workarounds:
+workaround;vk_wa1=VK Frame Pacing Workaround;vk_wa1=1;
+workaround;vk_wa2=VK Frame Queue Workaround;vk_wa2=1;
+workaround;vk_wa3=VK Workaround 3;vk_wa3=1;
+workaround;vk_wa4=Disable GPU Sync;vk_wa4=0;
+
+text;disable_vulkan;Miscelaneous:
+workaround;disable_vulkan=Force Disable Vulkan;blockvk=1;
+workaround;framepace_3=Alternate Frame Pacing (Deprecated);framepacev2=1;
+
+//workaround;spoofdreno=Spoof into A750;spoofdreno=1;
+workaround;uifg=UI FG;uifg=1;
+workaround;log=log;log=1;
+workaround;plog=plog;plog=1;
+
+enabled_var;debugui
+enabled_var;skipfg
+enabled_var;a640q
+enabled_var;a640qs
+enabled_var;a640b
+enabled_var;sfquality
+enabled_var;vk_presentmode
+enabled_var;vk_sync
+enabled_var;vk_fallback
+enabled_var;vk_fbo
+enabled_var;vk_wa1
+enabled_var;vk_wa2
+enabled_var;vk_wa3
+enabled_var;vk_wa4
+enabled_var;vk_wa5
+enabled_var;vk_wa7
+enabled_var;g57wa
+enabled_var;framepace
+enabled_var;vk_flight
+enabled_var;vk_adrenotools
+enabled_var;spoofdreno
+enabled_var;uifg
+enabled_var;kgsl_gpu_boost
+enabled_var;log
+enabled_var;plog
+enabled_var;ctam
+
+experi_var;vk_wa1
+experi_var;vk_wa2
+experi_var;vk_wa3
+experi_var;vk_wa4
+//experi_var;vk_wa5
+experi_var;vk_wa7
+experi_var;sfquality
+
+minver_var;a640b;0.0.766
+
+//vulkan stuff
+minver_var;vk_presentmode;0.0.900
+minver_var;vk_adrenotools;0.0.900
+minver_var;vk_sync;0.0.900
+minver_var;vk_fbo;0.0.900
+minver_var;vk_wa1;0.0.900
+minver_var;vk_wa2;0.1.268
+minver_var;vk_wa3;0.3.219
+minver_var;vk_wa4;0.4.162
+minver_var;vk_wa5;0.6.1043
+minver_var;g57wa;0.6.1043
+minver_var;spoofdreno;0.3.179
+minver_var;uifg;0.3.179
+
+//experimental toggle
+workaround;ignore_blacklist=Disable game deny list (at your own risk);ignore_blacklist=1;
+experi_var;ignore_blacklist
+
+//dev build only
+workaround;dbg_show_frametime=dbg_show_frametime;debugui=4;
+dev_var;dbg_show_frametime
+workaround;xtrplt=Frame Extrapolation;xtrplt=1;
+dev_var;xtrplt
+workaround;glclear=glclear opt;glclear=1;glclearfg=1;
+dev_var;glclear
+
+//dev_var;vk_adrenotools
+dev_var;vk_fbo
+dev_var;vk_sync
+dev_var;vk_fallback
+//experi_var;vk_presentmode
+experi_var;spoofdreno
+dev_var;uifg
+dev_var;log
+dev_var;plog
+experi_var;framepace_3
+
+workaround;vk_fbo=disable vk fbo;vk_fbo=0;
+workaround;vk_fallback=force unssupported vk driver mode;vk_fallback=1;
+
+workaround;vk_framealloc=Force max frame allocation;vk_framealloc=1;
+enabled_var;vk_framealloc
+minver_var;vk_framealloc;0.5.133
+
+workaround;skpf=skpf;skpf=1;
+enabled_var;skpf
+dev_var;skpf
+minver_var;skpf;0.6.1057
+
+minver_var;fiwa;0.6.1100
+
+workaround;vk_wa5=Disable GPU Driver Workarounds;vk_wa5=1;
+
+workaround;debugview1=debugview1;debugview1=1;
+enabled_var;debugview1
+dev_var;debugview1
+
+workaround;daemon_miui_uncap=Daemon MIUI Uncap Refresh Rate;daemon_miui_uncap=1;
+enabled_var;daemon_miui_uncap
+dev_var;daemon_miui_uncap
+
+enabled_var;ignore_blacklist
+enabled_var;dbg_show_frametime
+enabled_var;xtrplt
+enabled_var;glclear
+enabled_var;vk_a6xx_path
+
+//vulkan driver switchables
+vkdriver;turnip;Turnip
+
+//gpu specific
+//adreno,non_adreno,mali
+non_adreno;g57wa
+non_adreno;vk_wa5
+non_adreno;vk_wa7
+adreno;spoofdreno
+adreno;kgsl_gpu_boost
+
