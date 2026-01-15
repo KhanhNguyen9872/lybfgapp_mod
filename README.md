@@ -4,6 +4,18 @@
 *   **Stable:** [Link](https://KhanhNguyen9872.github.io/lybfgapp_mod/dl)
 *   **Experimental:** [Link](https://KhanhNguyen9872.github.io/lybfgapp_mod/dl_exp)
 
+## Tutorial Install
+**Requirement:** Need root (Magisk/KernelSU/SukiSU/...)
+
+1.  Go to [https://khanhnguyen9872.github.io/lybfgapp_mod/framegen](https://khanhnguyen9872.github.io/lybfgapp_mod/framegen), select **Download (Stable)** or **Download (Experimental)**.
+2.  Download **APK** and **Module**.
+3.  Install module into **Magisk/KernelSU/SukiSU**.
+4.  Install **APK**.
+5.  Grant root for the app named "**Frame Gen**".
+6.  Restart the phone.
+7.  Open the app, click to **License**, click **Verify and Save**.
+8.  When it show "**License has been set.**", then close the app and reopen again.
+
 ## Disclaimer
 This is an unofficial project modded from [https://lybxlpsv.com/framegen](https://lybxlpsv.com/framegen).
 **Proclaimer:** All risks or issues encountered while using this mod are not the responsibility of the modder.
