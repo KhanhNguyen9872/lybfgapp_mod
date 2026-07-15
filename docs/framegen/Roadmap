@@ -31,11 +31,11 @@ We may occasionally incorporate new features and improvements into stable branch
 
 ## 🚧 0.6
 
-* Backend rework, frame pacing, and model improvements to prepare for our upcoming rootless version.
-* Perhaps finally usable on Mali? We'll see.✅
+* Backend rework, frame pacing, and model improvements to prepare for our upcoming rootless version.🚧
 * Workaround for certain emulators.✅
+* Preliminary support for certain dual screen device.✅
+* Investigate Mali issues on certain games.🚧
 * Localization and UX improvements.🚧
-* Proper LTPO support.🚧
 
 ## 🚧 0.7
 
@@ -46,12 +46,7 @@ We may occasionally incorporate new features and improvements into stable branch
 
 * Implement more sophisticated UI detection model.
 * Improve frame generation output and find the balance between performance, quality and power consumption.
-
-## Possibly in the future?
-
-* Termux X11 Support
-* Upscaling? Post-Processing?
-* No root mode (A11+)
+* LTPO support.
 
 Keep in mind that these list are non-exhaustive, there are maybe even more caveats and to-dos that we haven't discovered yet along with the **unknown possibility** of such thing to be implemented. We will still try to mitigate any issues through potential workarounds where feasible.
 
