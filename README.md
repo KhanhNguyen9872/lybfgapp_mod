@@ -35,10 +35,7 @@
 5.  **Reboot**: Restart your device.
 6.  **Activate**:
     -   Open the app, agree to terms.
-    -   Go to **License**, paste the following key, and click **Verify and Save**:
-    ```text
-    id=type.lybaccount...id.1...orderid.1...nonce.f3b91c24ad7e8f1b2c6d0a4e9b8f5c1d7a2e4f6c8b9d0e1f2a3b4c5d6e7f8;key=aa1122bb33cc44dd55ee66778899aabbccddeeff00112233445566778899aabbccddeeff00112233445566778899aabbccddeeff00
-    ```
+    -   Go to **License** and click **Verify and Save** directly (no need to copy/paste any license code; it will be auto-filled offline).
     -   Wait for "License has been set" and "Valid" confirmation.
 
 ## ⚠️ Disclaimer
