@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anti-Cheat & Performance Warning</title>
+    <style>
+        :root {
+            --bg-color: #121212;
+            --card-bg: #1e1e1e;
+            --text-primary: #ffffff;
+            --text-secondary: #b0b0b0;
+            --warning-color: #ffcc00;
+            --accent-color: #ff4444;
+            --info-blue: #44aaff;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .warning-card {
+            background-color: var(--card-bg);
+            border-left: 5px solid var(--warning-color);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            color: var(--warning-color);
+            font-size: 1.5rem;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .icon {
+            margin-right: 10px;
+            font-size: 1.8rem;
+        }
+
+        p {
+            font-size: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .action-box {
+            margin-top: 25px;
+            padding: 15px;
+            background: rgba(255, 204, 0, 0.1);
+            border-radius: 6px;
+            border: 1px dashed var(--warning-color);
+        }
+
+        .latency-box {
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(68, 170, 255, 0.05);
+            border-radius: 6px;
+            border-left: 3px solid var(--info-blue);
+        }
+
+        .highlight-red {
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        .footer-note {
+            font-size: 0.85rem;
+            margin-top: 20px;
+            color: var(--accent-color);
+            text-align: center;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="warning-card">
+        <h1>
+            <span class="icon">⚠️</span> 
+            Important Usage Notice
+        </h1>
+
+        <p>
+            Please be aware that certain games with aggressive anti-cheat systems may identify "frame generation" as unauthorized modifications.
+        </p>
+
+        <div class="latency-box">
+            <p style="margin: 0; color: var(--text-primary); font-size: 0.95rem;">
+                <strong style="color: var(--info-blue);">⚡ Competitive Disadvantage:</strong>
+                <br>
+                Frame generation introduces additional <span class="highlight-red">input and display latency</span>.
+                <br>
+            </p>
+        </div>
+
+        <div class="action-box">
+            <p style="margin: 0; color: var(--text-primary); line-height: 1.5;">
+                Please consult the:
+                <br><br>
+                <span style="color: var(--warning-color); font-weight: bold;">
+                    Guides & Information &rarr; Unsupported Games List
+                </span>
+                <br><br>
+                Review this list for the latest information regarding known compatibility issues and potential anti-cheat risks.
+            </p>
+        </div>
+
+        <p class="footer-note">
+            Use at your own risk when playing online or competitive titles.
+        </p>
+    </div>
+</div>
+
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon='{"version":"2024.11.0","token":"bc5db3bae3a94678a23b04d53d5de216","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
