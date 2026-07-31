@@ -21,8 +21,8 @@
 
 ## 📥 Downloads
 
--   **Stable**: [Download Here](https://KhanhNguyen9872.github.io/lybfgapp_mod/dl)
--   **Experimental**: [Download Here](https://KhanhNguyen9872.github.io/lybfgapp_mod/dl_exp)
+-   **Stable**: [Download Here](https://fgly.sgedtech.com/framegen/dl/)
+-   **Experimental**: [Download Here](https://fgly.sgedtech.com/framegen/dl_exp/)
 
 ## 🚀 Installation Guide
 
