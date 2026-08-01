@@ -1,0 +1,60 @@
+# Source-project verification record
+DATE=2026-08-01T07:11:58
+PROJECT=C:\Users\Admin\Documents\GitHub\lybfgapp_mod\docs\framegen\dl_exp\source-project
+
+## Preserved baseline
+COMMAND: Get-FileHash -Algorithm SHA256 -LiteralPath "C:\Users\Admin\Documents\GitHub\lybfgapp_mod\docs\framegen\dl_exp\files\lybfghook-v0.6.4154-release.zip"
+OUTPUT: a77eaa7bdb3854b03e38c87d9b015e6e401259ac9dfcf721b016eec23b1de67b  C:\Users\Admin\Documents\GitHub\lybfgapp_mod\docs\framegen\dl_exp\files\lybfghook-v0.6.4154-release.zip
+EXIT: 0
+COMMAND: Get-FileHash -Algorithm SHA256 -LiteralPath "C:\Users\Admin\Documents\GitHub\lybfgapp_mod\scratch\dl_exp_arm64_reconstruct_research\arm64-v8a.so"
+OUTPUT: 029fcaf37ec225d915db9892ac47c0c9cde50d1d851450225a78001920b60c45  C:\Users\Admin\Documents\GitHub\lybfgapp_mod\scratch\dl_exp_arm64_reconstruct_research\arm64-v8a.so
+EXIT: 0
+COMMAND: Get-FileHash -Algorithm SHA256 -LiteralPath "C:\Users\Admin\Documents\GitHub\lybfgapp_mod\scratch\dl_exp_arm64_reconstruct_research\full_source_generated\rebuild\jni\reconstructed_module.cpp"
+OUTPUT: efe61ae96612f8137b4d478a25ce57e8f669bec63d250d1ad87e953cab1258b0  C:\Users\Admin\Documents\GitHub\lybfgapp_mod\scratch\dl_exp_arm64_reconstruct_research\full_source_generated\rebuild\jni\reconstructed_module.cpp
+EXIT: 0
+
+## Clean build
+COMMAND: & "C:\Users\Admin\AppData\Local\Android\Sdk\ndk\28.2.13676358\ndk-build.cmd" NDK_PROJECT_PATH=. APP_BUILD_SCRIPT=Android.mk NDK_APPLICATION_MK=Application.mk clean V=0
+OUTPUT: [arm64-v8a] Clean          : reconstructed_zygisk [arm64-v8a]
+EXIT: 0
+COMMAND: & powershell -NoProfile -ExecutionPolicy Bypass -File "C:\Users\Admin\Documents\GitHub\lybfgapp_mod\docs\framegen\dl_exp\source-project\verification\verify_project.ps1"
+OUTPUT: [arm64-v8a] Compile++      : reconstructed_zygisk <= companion_service.cpp
+OUTPUT: [arm64-v8a] Compile++      : reconstructed_zygisk <= control_device.cpp
+OUTPUT: [arm64-v8a] Compile++      : reconstructed_zygisk <= external_provider.cpp
+OUTPUT: [arm64-v8a] Compile++      : reconstructed_zygisk <= module_runtime.cpp
+OUTPUT: [arm64-v8a] Compile++      : reconstructed_zygisk <= module_state.cpp
+OUTPUT: [arm64-v8a] Compile++      : reconstructed_zygisk <= wire_protocol.cpp
+OUTPUT: [arm64-v8a] Compile++      : reconstructed_zygisk <= zygisk_entry.cpp
+OUTPUT: [arm64-v8a] SharedLibrary  : libreconstructed_zygisk.so
+OUTPUT: [arm64-v8a] Install        : libreconstructed_zygisk.so => libs/arm64-v8a/libreconstructed_zygisk.so
+OUTPUT: SIZE=259432
+OUTPUT: SHA256=b5dc15e90a28faba26432a057cc25ac9ed65e9046343b6ea9fbc3fb4a6d1afc8
+OUTPUT: EXPORTS=2
+OUTPUT: SOURCE_FILES=15
+OUTPUT: OBFUSCATED_MATCHES=0
+OUTPUT: INDEX_ROWS=16746
+OUTPUT: STATUS=OK
+EXIT: 0
+
+## Package
+COMMAND: Compress-Archive package/module.prop and package/zygisk into "C:\Users\Admin\Documents\GitHub\lybfgapp_mod\docs\framegen\dl_exp\source-project\source-project-package-arm64.zip"; open ZIP and list entries
+OUTPUT: ZIP_TEST=OK
+OUTPUT: ZIP_ENTRIES=zygisk/arm64-v8a.so,module.prop
+OUTPUT: ZIP_SIZE=87621
+OUTPUT: ZIP_SHA256=578cf7569ae7f710d1b1f28a23ae0f4d41e857c1c5984289dcdf5890e91f0464
+EXIT: 0
+
+## Rollback
+COMMAND: & powershell -NoProfile -ExecutionPolicy Bypass -File "C:\Users\Admin\Documents\GitHub\lybfgapp_mod\docs\framegen\dl_exp\source-project\verification\rollback_project.ps1"
+OUTPUT: ROLLBACK_OK 7cd12fd58f3de1af1b947307f5cf9307378f11c6da2df18c3d2ff44483411128
+OUTPUT: STATUS=ROLLBACK_OK
+EXIT: 0
+COMMAND: & powershell -NoProfile -ExecutionPolicy Bypass -File "C:\Users\Admin\Documents\GitHub\lybfgapp_mod\docs\framegen\dl_exp\source-project\verification\verify_project.ps1"  # rebuild after rollback check
+OUTPUT: SHA256=b5dc15e90a28faba26432a057cc25ac9ed65e9046343b6ea9fbc3fb4a6d1afc8
+OUTPUT: STATUS=OK
+EXIT: 0
+
+## Patch
+PATCH=C:\Users\Admin\Documents\GitHub\lybfgapp_mod\docs\framegen\dl_exp\source-project\verification\refactor.patch
+PATCH_BYTES=8957
+PATCH_STATUS=GENERATED

@@ -1,0 +1,6 @@
+libs/
+obj/
+verification/build.log
+verification/verification.txt
+verification/rollback_record.txt
+verification/package_entries.txt
